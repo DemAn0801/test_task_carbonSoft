@@ -1,21 +1,10 @@
-from django.http import HttpResponse
 from django.shortcuts import render
+from .models import SystemInfo
 
 # Create your views here.
 
+
 def main(request):
-    context = {
-        "rows" : [
-            {
-            "id": 1,
-            "created": 1111,
-            "value": 0.1
-            },
-            {
-            "id": 2,
-            "created": 2222,
-            "value": 0.2
-        }
-        ]
-    }
-    return render(request, "table.html", context )
+    system_info = SystemInfo.objects.all().order_by("-id")[:100]
+    context = {"rows": system_info}
+    return render(request, "table.html", context)
