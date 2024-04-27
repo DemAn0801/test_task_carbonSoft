@@ -7,23 +7,29 @@
 
 
 {% block content %}
+<button id="descending_order" onclick="toSortDescending()">Сортировать по убыванию</button>
+<button id="ascending_order" onclick="toSortAscending()">Сортировать по возрастанию</button>
+<button>Среднее значение</button>
 <div class="table_base">
-    <table border="1">
-        <thead>
-        <tr>
-          <th>Время снятия показания</th>
-          <th>Загрузка CPU, %</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in rows %}
-        <tr id="{{row.id}}">
-          <td>{{row.created}}</td>
-          <td>{{row.cpu_avg}}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-      </table>
+<table border="1">
+    <thead>
+    <tr>
+      <th>Время снятия показания</th>
+      <th>Загрузка CPU, %</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in rows %}
+    
+    <tr>
+      <td id="{{forloop.counter}}-created">{{row.created}}</td>
+      <td id="{{forloop.counter}}-cpu">{{row.cpu_avg}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  </table>
 </div>
 
+<script src="{% static "js/script.js" %}"></script>
 {% endblock %}
+
