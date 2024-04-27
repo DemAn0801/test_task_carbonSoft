@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static "/css/table.css" %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="table_base">
+    <table border="1">
+        <thead>
+        <tr>
+          <th>Время снятия показания</th>
+          <th>Загрузка CPU, %</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr id="{{row.id}}">
+          <td>{{row.created}}</td>
+          <td>{{row.value}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      </table>
+</div>
+
+{% endblock %}
