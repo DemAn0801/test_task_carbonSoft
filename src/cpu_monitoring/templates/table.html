@@ -9,7 +9,24 @@
 {% block content %}
 <button id="descending_order" onclick="toSortDescending()">Сортировать по убыванию</button>
 <button id="ascending_order" onclick="toSortAscending()">Сортировать по возрастанию</button>
-<button>Среднее значение</button>
+
+<table border="1">
+  <thead>
+  <tr>
+    <th>Параметр</th>
+    <th>Загрузка CPU, %</th>
+  </tr>
+</thead>
+<tbody>
+  {% for val in agregate %}
+  <tr>
+    <td>{{val.title}}</td>
+    <td id="{{val.id}}">{{val.info}}</td>
+  </tr>
+ {% endfor %} 
+</tbody>
+</table>
+
 <div class="table_base">
 <table border="1">
     <thead>
