@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-
 from .models import SystemInfo
 
 
@@ -15,7 +14,7 @@ def get_new(request):
     # Далее логично былло бы использовать сериализатор, но в в задании DRF не значился
     result = [
         {
-            "created": o.created,
+            "created": o.get_str_data(),
             "cpu": o.cpu_avg,
         }
         for o in system_info

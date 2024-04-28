@@ -6,9 +6,9 @@ const doRequest = async(url) => {
 const toSort = (how, list) => {
     switch(how) {
         case "lower":
-            return list.sort((a, b) => a.cpu < b.cpu ? 1 : -1);
-        case "upper":
             return list.sort((a, b) => a.cpu > b.cpu ? 1 : -1);
+        case "upper":
+            return list.sort((a, b) => a.cpu < b.cpu ? 1 : -1);
     }
 } 
 

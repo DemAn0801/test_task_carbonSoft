@@ -22,7 +22,7 @@
     {% for row in rows %}
     
     <tr>
-      <td id="{{forloop.counter}}-created">{{row.created}}</td>
+      <td id="{{forloop.counter}}-created">{{row.created|date:"d.m.Y h:m:s"}}</td>
       <td id="{{forloop.counter}}-cpu">{{row.cpu_avg}}</td>
     </tr>
     {% endfor %}
