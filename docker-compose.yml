@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  django:
+    container_name: dj
+    build:
+      dockerfile: Dockerfile
+      context: .
+    env_file:
+      - .env
+    entrypoint: /entrypoint.sh
+    ports:
+      - "127.0.0.1:${DJANGO_PORT_OUT}:${PORT}"
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+          max-size: "10m"
+          max-file: "3"
