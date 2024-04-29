@@ -12,4 +12,4 @@ setInterval(async() => {
         row.appendChild(td2);
         tbody.appendChild(row);
     });
-} , 1000);
+} , 10000);

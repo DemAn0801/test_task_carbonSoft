@@ -7,7 +7,12 @@
     </tr>
     </thead>
     <tbody id="table_body">
-
+        {% for val in rows %}
+        <tr>
+          <td>{{val.created}}</td>
+          <td>{{val.cpu_avg}}</td>
+        </tr>
+        {% endfor %}
     </tbody>
     </table>
 </div>

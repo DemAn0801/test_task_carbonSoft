@@ -32,7 +32,7 @@ setInterval(async() => {
         row.appendChild(td2);
         tbody.appendChild(row);
     });
-} , 1000);
+} , 10000);
 
 const updateTable = (list) => { 
      for (let i = 0; i < list.length; i++) {
