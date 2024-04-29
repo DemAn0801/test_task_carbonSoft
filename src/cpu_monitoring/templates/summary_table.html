@@ -1,0 +1,16 @@
+<table id="summary_table" border="1">
+    <thead>
+    <tr>
+      <th>Параметр</th>
+      <th>Загрузка CPU, %</th>
+    </tr>
+  </thead>
+  <tbody id="summary_table_body">
+    {% for val in agregate %}
+    <tr>
+      <td>{{val.title}}</td>
+      <td id="{{val.id}}">{{val.info}}</td>
+    </tr>
+   {% endfor %} 
+  </tbody>
+  </table>

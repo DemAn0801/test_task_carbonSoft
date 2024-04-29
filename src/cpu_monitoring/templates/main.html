@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static "/css/table.css" %}">
+{% endblock %}
+
+
+{% block content %}
+<button id="descending_order" onclick="toSortDescending()">Сортировать по убыванию</button>
+<button id="ascending_order" onclick="toSortAscending()">Сортировать по возрастанию</button>
+
+{% include "summary_table.html" %}
+{% include "main_table.html" %}
+
+<script src="{% static "js/main_table.js" %}"></script>
+<script src="{% static "js/summary_table.js" %}"></script>
+{% endblock %}
+
