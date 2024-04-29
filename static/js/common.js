@@ -17,21 +17,30 @@ const toSort = (how, list) => {
     };
 };
 
-const toSortDescending = async () => {
+const toSortDescending = async(target) => {
+    let buttons = document.querySelectorAll(".btn.my_btn");
+    buttons.forEach(el => el.classList.remove("active_button"));
+    target.classList.add("active_button")
     sortMethod = "upper";
     let response = await doRequest(`${URL}/get_new/`);
     let sortedList = toSort(sortMethod, response["result"]["rows"]);
     updateMainTable(sortedList);
 };
 
-const toSortAscending = async () => {
+const toSortAscending = async(target) => {
+    let buttons = document.querySelectorAll(".btn.my_btn");
+    buttons.forEach(el => el.classList.remove("active_button"));
+    target.classList.add("active_button")
     sortMethod = "lower";
     let response = await doRequest(`${URL}/get_new/`);
     let sortedList = toSort(sortMethod, response["result"]["rows"]);
     updateMainTable(sortedList);
 };
 
-const toSortCronic = async () => {
+const toSortChronic = async(target) => {
+    let buttons = document.querySelectorAll(".btn.my_btn");
+    buttons.forEach(el => el.classList.remove("active_button"));
+    target.classList.add("active_button")
     sortMethod = "chronic";
     let response = await doRequest(`${URL}/get_new/`);
     let sortedList = toSort(sortMethod, response["result"]["rows"]);

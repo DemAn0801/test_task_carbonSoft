@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+   }
+.my_btn {
+    height: 5vh;
+    width: auto;
+    font-size: 20px;
+    padding: 0 10px 0 10px;
+    margin: 0 0 39px 20px;
+}
+.btn.my_btn:hover {
+    background-color: black;
+    transition: 1s;
+}
+.main {
+    display: flex;
+}
+.summary_and_buttons {
+    top: 80px;
+    display: flex;
+    position: fixed;
+}
+.btns_block {
+    display: flex;
+    flex-direction: column;
+}
+#main_table {
+    min-width: 300px;
+    max-width: 400px;
+    position: relative;
+    left: 800px;
+    top: 20px;
+}
+.active_button.btn.my_btn {
+    background-color: black;
+}
