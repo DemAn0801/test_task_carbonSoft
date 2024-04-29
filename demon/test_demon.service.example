@@ -1,0 +1,8 @@
+[Unit]
+Description=Test daemon
+
+[Service]
+User=<your_user_name>
+ExecStart=sh <path_to_project>/test_task_carbonSoft/demon.sh
+
+
