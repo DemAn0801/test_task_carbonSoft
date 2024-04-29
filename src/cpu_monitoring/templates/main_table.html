@@ -9,8 +9,8 @@
     <tbody id="table_body">
         {% for val in rows %}
         <tr>
-          <td>{{val.created}}</td>
-          <td>{{val.cpu_avg}}</td>
+          <td id="{{forloop.counter}}-created"></td>
+          <td id="{{forloop.counter}}-cpu"></td>
         </tr>
         {% endfor %}
     </tbody>
