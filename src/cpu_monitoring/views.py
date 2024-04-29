@@ -1,8 +1,9 @@
+import json
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse
 from .models import SystemInfo
 from django.db.models import Max, Min, Avg
-
+from django.views.decorators.csrf import csrf_exempt
 
 def main(request):
     system_info = SystemInfo.objects.all().order_by("-id")
@@ -60,3 +61,15 @@ def get_new(request):
     ]
     response = {"result": result}
     return JsonResponse(response)
+
+
+@csrf_exempt
+def create_record(request):
+    if request.method == "POST":
+        data = json.loads(request.body.decode())
+        val = data["cpu"]
+        new_rrecord = SystemInfo.objects.create(cpu_avg=val)
+        new_rrecord.save()
+        return HttpResponse(status=201)
+    return HttpResponse(status=403)
+        
