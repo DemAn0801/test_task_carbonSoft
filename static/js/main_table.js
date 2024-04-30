@@ -3,7 +3,7 @@ const updateMainTable = async() => {
     let tbody = document.querySelector("#table_body");
     tbody.innerHTML = "";
     let counter = 1;
-    let lsortedList = toSort(sortMethod, response["result"]["rows"]);
+    let lsortedList = toSortList(sortMethod, response["result"]["rows"]);
     lsortedList.forEach(element => {
         let row = document.createElement("tr");
         let td1 = document.createElement("td");

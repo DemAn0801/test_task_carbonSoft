@@ -15,9 +15,9 @@
             {% include "summary_table.html" %}
         </div>
         <div class="btns_block">
-            <button id="descending_order" class="my_btn btn btn-secondary" onclick="toSortDescending(event.target)">Сортировать по убыванию</button>
-            <button id="ascending_order" class="my_btn btn btn-secondary" onclick="toSortAscending(event.target)">Сортировать по возрастанию</button>
-            <button id="ascending_order" class="my_btn btn btn-secondary active_button " onclick="toSortChronic(event.target)">Хронологический порядок</button>  
+            <button id="descending_order" class="my_btn btn btn-secondary" onclick="toSortMainTable(event.target, 'lower')">Сортировать по убыванию</button>
+            <button id="ascending_order" class="my_btn btn btn-secondary" onclick="toSortMainTable(event.target, 'upper')">Сортировать по возрастанию</button>
+            <button id="ascending_order" class="my_btn btn btn-secondary active_button " onclick="toSortMainTable(event.target, 'chronic')">Хронологический порядок</button>  
         </div>
     </div>
         {% include "main_table.html" %}
