@@ -17,7 +17,7 @@
 - `cp .env.sample .env`
 - `docker-compose up --build -d` - приложение будет запущено на 127.0.0.0:8000. Можно изменить в .env DJANGO_PORT_OUT
 2) Обычный запуск:
-2.1. Создать и активировать виртуальное окружение для python 3.10. Я использую anaconda. Опишу работу с этим инструментом:
+- Создать и активировать виртуальное окружение для python 3.10. Я использую anaconda. Опишу работу с этим инструментом:
 - `conda create -n venv3.10 python=3.10 -y`
 - `conda activate venv3.10`
 - `pip install -r requierments.txt`
