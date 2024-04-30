@@ -7,7 +7,9 @@ const updateSummaryTable = async() => {
         let td1 = document.createElement("td");
         td1.appendChild(document.createTextNode(`${element["title"]}`));
         let td2 = document.createElement("td");
-        td2.appendChild (document.createTextNode(element["cpu"].toFixed(2)));
+        td2.appendChild (document.createTextNode(
+            element["info"]?.toFixed(2)
+        ));
         row.appendChild(td1);
         row.appendChild(td2);
         tbody.appendChild(row);

@@ -10,7 +10,9 @@ const updateMainTable = async() => {
         td1.appendChild(document.createTextNode(`${element["created"]}`));
         td1.id = `${counter}-created`
         let td2 = document.createElement("td");
-        td2.appendChild (document.createTextNode(element["cpu"].toFixed(2)));
+        td2.appendChild (document.createTextNode(
+            element["cpu"]?.toFixed(2)
+        ));
         td2.id = `${counter}-cpu`
         row.appendChild(td1);
         row.appendChild(td2);

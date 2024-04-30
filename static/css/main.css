@@ -9,9 +9,16 @@
     padding: 0 10px 0 10px;
     margin: 0 0 39px 20px;
 }
+.btns_block {
+    display: flex;
+    flex-direction: column;
+}
 .btn.my_btn:hover {
     background-color: black;
     transition: 1s;
+}
+.active_button.btn.my_btn {
+    background-color: black;
 }
 .main {
     display: flex;
@@ -21,17 +28,11 @@
     display: flex;
     position: fixed;
 }
-.btns_block {
-    display: flex;
-    flex-direction: column;
-}
+
 #main_table {
     min-width: 300px;
     max-width: 400px;
     position: relative;
     left: 800px;
     top: 20px;
-}
-.active_button.btn.my_btn {
-    background-color: black;
 }

@@ -24,7 +24,7 @@ const toSortList = (how, list) => {
 };
 
 const toSortMainTable = async(btn, howToSort) => {
-    markBtnActive(btn, howToSort);
+    markBtnAsActive(btn, howToSort);
     let response = await doRequest(`${URL}/get_new/`);
     let sortedList = toSortList(sortMethod, response["result"]["rows"]);
     updateMainTable(sortedList);
